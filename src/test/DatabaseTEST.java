@@ -24,8 +24,14 @@ public class DatabaseTEST extends JFrame {
 		
 		this.database = new DatabaseHANDLE(Parameters.DATABASE);
 		
+		// Alle messages und alle User löschen 
+		 
+		//((DatabaseHANDLE)database).deleteUsers();
+		//((DatabaseHANDLE)database).deleteMessages();
+		
+		 
+		
 		this.init();
-
 		this.pack();
 		this.setLocationRelativeTo(null);
 	}

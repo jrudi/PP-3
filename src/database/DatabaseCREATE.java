@@ -36,15 +36,36 @@ public class DatabaseCREATE extends ADatabase {
 	
 	public void create() {
 		if(!this.check()) {
-			/* YOUR IMPLEMENTATION */
+			try {
+				Statement statement = this.connection.createStatement();
+				statement.executeUpdate("CREATE TABLE users (username TEXT NOT NULL PRIMARY KEY)");
+				statement.executeUpdate("CREATE TABLE messages("
+						+ "id INTEGER PRIMARY KEY, "
+						+ "userfrom TEXT NOT NULL, "
+						+ "userto TEXT NOT NULL, "
+						+ "message TEXT NOT NULL, "
+						+ "time INTEGER NOT NULL, "
+						+ "unread INTEGER NOT NULL, "
+						+ "FOREIGN KEY(userfrom) REFERENCES users(username), "
+						+ "FOREIGN KEY(userto) REFERENCES users(username) "
+						+ ")");
+			
+			
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} 
+
+			
 		}
 	}
 	
 	public void fill() {
+		System.out.println("hi2");
+
 		if(this.check()) {
 			try {
 				Statement statement = this.connection.createStatement(); 
-				
+				System.out.println("hi");
 				// users
 				statement.executeUpdate("INSERT INTO users(username) VALUES ('user_one')");
 				statement.executeUpdate("INSERT INTO users(username) VALUES ('user_two')");
@@ -65,7 +86,7 @@ public class DatabaseCREATE extends ADatabase {
 	
 	public static void main(String[] args) {
 		DatabaseCREATE database = new DatabaseCREATE(Parameters.DATABASE);
-		boolean examples = false;
+		boolean examples = true;
 
 		System.out.println("check is " + database.check());
 		

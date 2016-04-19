@@ -60,12 +60,10 @@ public class DatabaseCREATE extends ADatabase {
 	}
 	
 	public void fill() {
-		System.out.println("hi2");
 
 		if(this.check()) {
 			try {
 				Statement statement = this.connection.createStatement(); 
-				System.out.println("hi");
 				// users
 				statement.executeUpdate("INSERT INTO users(username) VALUES ('user_one')");
 				statement.executeUpdate("INSERT INTO users(username) VALUES ('user_two')");

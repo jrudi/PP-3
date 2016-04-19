@@ -22,7 +22,7 @@ public class DatabaseTEST extends JFrame {
 		super("TEST");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-//		this.database = new DatabaseHANDLE(Parameters.DATABASE);
+		this.database = new DatabaseHANDLE(Parameters.DATABASE);
 		
 		this.init();
 

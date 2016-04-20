@@ -34,6 +34,7 @@ public class DatabaseTEST extends JFrame {
 		this.init();
 		this.pack();
 		this.setLocationRelativeTo(null);
+		
 	}
 	
 	private void init() {
@@ -82,7 +83,10 @@ public class DatabaseTEST extends JFrame {
 		TitledBorder BOARDER7 = BorderFactory.createTitledBorder("selectUnreadChatHistory(userto : ChatUser) : List<ChatHistory>");
 		PANEL7.setBorder(BOARDER7);
 		container.add(PANEL7);
+		
+		
 	}
+	
 	
 	private void PANEL1(JPanel panel){
 		panel.setLayout(new BorderLayout(10, 10));
